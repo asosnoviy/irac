@@ -15,7 +15,7 @@ before_install:
   - oscript
 install:  
   - sudo opm install -l
-  - sudo opm install -l 1testrunner
+  - sudo opm install 1testrunner
 
 cache:
   directories:
