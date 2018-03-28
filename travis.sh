@@ -18,8 +18,7 @@ if [ "$TRAVIS_SECURE_ENV_VARS" == "true" ]; then
         -Dsonar.login=$SONAR_TOKEN \
         -Dsonar.scanner.skip=false \
         -Dsonar.branch.name=
-        
-        
+
   elif [ "$TRAVIS_BRANCH" == "develop" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     sonar-scanner \
         -Dsonar.host.url=https://sonar.silverbulleters.org \

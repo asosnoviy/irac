@@ -1,9 +1,12 @@
 sudo: required
 dist: trusty
 addons:
-  sonarcloud: true
+  sonarqube: true
 jdk:
   - oraclejdk8
+branches:
+  - master
+  - develop 
 before_install: 
   - chmod +x travis.sh
   # - if [ $TRAVIS_OS_NAME == "linux" ]; then  
