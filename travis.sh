@@ -16,15 +16,17 @@ if [ "$TRAVIS_SECURE_ENV_VARS" == "true" ]; then
         -Dsonar.github.repository=$TRAVIS_REPO_SLUG \
         -Dsonar.github.oauth=$SONAR_GITHUB_TOKEN \
         -Dsonar.login=$SONAR_TOKEN \
-        -Dsonar.scanner.skip=false
-        -Dsonar.branch=
+        -Dsonar.scanner.skip=false\
+        -Dsonar.branch=\
+        -Dsonar.branch.name
 
   elif [ "$TRAVIS_BRANCH" == "develop" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     sonar-scanner \
         -Dsonar.host.url=https://sonar.silverbulleters.org \
         -Dsonar.login=$SONAR_TOKEN \
         -Dsonar.projectVersion=$version\
-        -Dsonar.scanner.skip=false
-        -Dsonar.branch=
+        -Dsonar.scanner.skip=false\
+        -Dsonar.branch=\
+        -Dsonar.branch.name=
   fi
 fi
