@@ -1,7 +1,7 @@
 sudo: required
 dist: trusty
 addons:
-  sonarcloud: true
+  sonarqube: true
 jdk:
   - oraclejdk8
 before_install: 
