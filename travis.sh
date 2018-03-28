@@ -2,7 +2,7 @@
 #!/bin/bash
 set -e
 
-# oscript /usr/share/oscript/lib/opm/src/opm.os run coverage
+oscript tasks/coverage.os
 
 temp=`cat packagedef | grep ".Версия(" | sed 's|[^"]*"||' | sed -r 's/".+//'`
 version=${temp##*|}
@@ -19,7 +19,7 @@ if [ "$TRAVIS_SECURE_ENV_VARS" == "true" ]; then
         -Dsonar.scanner.skip=false \
         -Dsonar.branch.name=
         
-        
+
   elif [ "$TRAVIS_BRANCH" == "develop" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     sonar-scanner \
         -Dsonar.host.url=https://sonar.silverbulleters.org \
